@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes.v2
+  labels:
+    app: notes
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: notes
+        version: v2
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: notes
+          image: notes:v2
+          imagePullPolicy: Never
+          volumeMounts:
+            - name: notes
+              mountPath: /notes
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            privileged: false
+            runAsUser: 1000
+            runAsGroup: 1000
+            capabilities:
+              drop:
+                - ALL
+          ports:
+            - containerPort: 8080
+
+      volumes:
+        - name: notes
+          emptyDir: {}

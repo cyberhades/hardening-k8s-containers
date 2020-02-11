@@ -1,0 +1,30 @@
+FROM golang:1.13 as build
+
+WORKDIR /go/src/app
+COPY main.go .
+COPY go.mod .
+COPY assets /assets/
+COPY pages /pages/
+
+RUN go get -d -v ./... && \
+    CGO_ENABLED=0 go install -v ./... && \
+    groupadd -g 1000 appgrp && \
+    useradd -g 1000 -l -m -s /bin/false -u 1000 appuser && \
+    mkdir /notes
+
+RUN chown appuser /notes
+
+FROM gcr.io/distroless/base
+
+COPY --from=build /etc/passwd /etc/passwd
+COPY --from=build /etc/group /etc/group
+COPY --from=build --chown=appuser:appgrp /go/bin/notes /app
+COPY --from=build --chown=appuser:appgrp /notes /notes/
+COPY --from=build --chown=appuser:appgrp /assets /assets/
+COPY --from=build --chown=appuser:appgrp /pages /pages/
+
+
+USER 1000
+EXPOSE 8080
+
+CMD ["/app"]

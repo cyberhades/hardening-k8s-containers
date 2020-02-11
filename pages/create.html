@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <title>Tk8 Note</title>
+</head>
+
+<body class="text-center">
+
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand">Tk8 Note</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link active" href="/create">Create Note</a>
+                <a class="nav-link" href="/list">List Notes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+
+        <div class="container">
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Create New Note</h4>
+                <form method="post" action="/create" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-16 order-md-1">
+                            <div class="mb-3 text-left">
+                                <label for="title">Name</span></label>
+                                <input class="form-control" id="title" name="title"
+                                       placeholder="Name of your note">
+                                <div class="invalid-feedback">
+                                    Please enter a name.
+                                </div>
+                            </div>
+                            <div class="mb-3 text-left">
+                                <label for="note">Note</label>
+                                <textarea class="form-control" id="note" name="note"
+                                          cols="80" rows="5"
+                                          placeholder="Note text"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Create</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Break me if you can</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../assets/jquery-3.2.1.slim.min.js"></script>
+<script src="../assets/popper.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+
+</body>
+</html>

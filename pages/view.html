@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <title>Tk8 Note</title>
+</head>
+
+<body class="text-center">
+
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand">Tk8 Note</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/create">Create Note</a>
+                <a class="nav-link active" href="/list">List Notes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+
+        <div class="container">
+            <div class="col-md-8 order-md-1 text-left">
+                <h4 class="mb-3">Name:</h4>
+                <h5>{{ .Name }} </h5>
+                <h4 class="mb-3">Content: </h4>
+                <h5><textarea cols="40" rows="10" readonly>{{ .Content }}</textarea></h5>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Break me if you can</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../assets/jquery-3.2.1.slim.min.js"></script>
+<script src="../assets/popper.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+
+</body>
+</html>

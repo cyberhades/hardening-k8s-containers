@@ -5,7 +5,7 @@ This repository contains a very simple and vulnerable application used to demons
 To try this yourself, you need access to a Kubernetes cluster, because this application is highly vulnerable **you do not want** to deploy this in a real cluster unless such cluster is properly isolated.
 
 ## Minikube
-If you want to use minikube:
+If you want to use minikube, you just can run the provided `init.sh` script or go step by step:
 
 #### Start minikube with at least cni plugin
 

@@ -9,7 +9,7 @@ If you want to use minikube, you just can run the provided `init.sh` script or g
 
 #### Start minikube with at least cni plugin
 
-    minikube start --extra-config=apiserver.authorization-mode=RBAC --network-plugin=cni --memory=4096 --vm-driver=virtualbox
+    minikube start --extra-config=apiserver.authorization-mode=RBAC --network-plugin=cni --memory=4096 --vm-driver=virtualbox --kubernetes-version v1.15.0
 
 #### Install Cilium cni plugin
 

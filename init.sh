@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Start minikube
-minikube start --extra-config=apiserver.authorization-mode=RBAC --network-plugin=cni --memory=4096 --vm-driver=virtualbox --kubernetes-version v1.15.0
+minikube start --extra-config=apiserver.authorization-mode=RBAC --network-plugin=cni --memory=4096 --driver=virtualbox --kubernetes-version v1.15.0 
 
 # Setup Cilium
 minikube ssh -- sudo mount bpffs -t bpf /sys/fs/bpf
-kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.6.5/install/kubernetes/quick-install.yaml
+kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.8.1/install/kubernetes/quick-install.yaml
 
 # Switch docker context
 eval $(minikube docker-env)
